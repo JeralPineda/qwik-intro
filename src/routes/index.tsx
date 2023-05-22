@@ -10,9 +10,20 @@ export default component$(() => {
       <span class="text-9xl">{pokemonId}</span>
 
       {/* TODO: Crear imagen */}
+      <img
+        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/${pokemonId.value}.png`}
+        alt="Pokemon"
+        width={200}
+        height={200}
+      />
+
       <div class="margin-top-2">
-        <button class="btn btn-primary mr-2">Anterior</button>
-        <button class="btn btn-primary">Anterior</button>
+        <button onClick$={() => pokemonId.value--} class="btn btn-primary mr-2">
+          Anterior
+        </button>
+        <button onClick$={() => pokemonId.value++} class="btn btn-primary">
+          Siguiente
+        </button>
       </div>
     </>
   );
